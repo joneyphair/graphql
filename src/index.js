@@ -1,23 +1,21 @@
 import express from 'express';
+import bodyParser from 'body-parser';
+import expressValidator from 'express-validator';
 
 import Schema from './Model/Schema';
 import Model from './Model';
-
 import { Envs } from './Configs';
 
-import { graphql } from 'graphql';
-import bodyParser from 'body-parser';
-import Router from './Router';
 
+import Router from './Router';
 
 // 全局变量
 global.Model = Model;
 
 let app = express();
 
-/*
-app.use(bodyParser.text({ type: 'application/graphql' }));
-*/
+app.use(bodyParser.json());
+app.use(expressValidator());
 
 app = Router(app);
 
