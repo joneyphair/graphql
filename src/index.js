@@ -7,6 +7,7 @@ import { Envs } from './Configs';
 
 import { graphql } from 'graphql';
 import bodyParser from 'body-parser';
+import Router from './Router';
 
 
 // 全局变量
@@ -18,17 +19,13 @@ let app = express();
 app.use(bodyParser.text({ type: 'application/graphql' }));
 */
 
-app.get('/graphql', (req, res) => {
-
-  Model().then((result) => {
-    res.send(JSON.stringify(result, null, 2));
-  });
-
-});
+app = Router(app);
 
 let server = app.listen(Envs.port, function () {
+
   let host = server.address().address;
   let port = server.address().port;
 
   console.log('GraphQL listening at http://%s:%s', host, port);
+
 });
