@@ -6,8 +6,8 @@ import Schema from './Model/Schema';
 
 import { Envs } from './Configs';
 
-import Router from './Router';
 import './Core';
+import RouterFactory from './router';
 
 //添加路由group功能
 express.application.group = express.Router.group = function(arg1, arg2) {
@@ -30,12 +30,10 @@ express.application.group = express.Router.group = function(arg1, arg2) {
 
 let app = express();
 
-
-
 app.use(bodyParser.json());
 app.use(expressValidator());
 
-app = Router(app);
+app = RouterFactory(app);
 
 let server = app.listen(Envs.port, function () {
 

@@ -1,14 +1,12 @@
-import Model from '../Model';
+//全局
+
+import controller from './controller';
+import model  from './model';
 
 const Yout = {};
 
-Yout.controller = {
-
-}
-
-Yout.model = Model;
-
-
+Yout.model = model;
+Yout.controller = controller; 
 
 //全局
 global.Yout = Yout;

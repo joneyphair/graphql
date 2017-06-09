@@ -1,6 +1,6 @@
 
 
-export default class UserController {
+export default class UserController extends Yout.controller.base {
 
     constructor(){
 

@@ -1,5 +1,7 @@
 import express from 'express';
 
+import {Wechat} from './Controller';
+
 
 module.exports = function (app) {
 
@@ -15,9 +17,19 @@ module.exports = function (app) {
 
     });
 
+    app.group('wechat',function(router){
+
+        const {UserController} = Wechat;
+
+        router.get('/user',function(){
+
+        }); 
+
+    });
+
     app.get('/graphql', (req, res) => {
 
-        Yout.model().then((result) => {
+        Yout.model.query().then((result) => {
             res.send(JSON.stringify(result, null, 2));
         });
 
