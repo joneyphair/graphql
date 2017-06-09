@@ -1,14 +1,23 @@
 import express from 'express';
 
-import UserRouter from './UserRouter';
 
 module.exports = function (app) {
 
-    app.use('/user', UserRouter);
+    app.group('/user', function(router){
+
+        router.get('/', function(req, res) {
+            res.send('home page!');
+        });
+
+        router.get('/about', function(req, res) {
+            res.send('about page!');
+        });
+
+    });
 
     app.get('/graphql', (req, res) => {
 
-        Model().then((result) => {
+        Yout.model().then((result) => {
             res.send(JSON.stringify(result, null, 2));
         });
 
