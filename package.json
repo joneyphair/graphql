@@ -1,0 +1,24 @@
+{
+  "name": "graphql",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.25.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-graphql": "^0.6.6",
+    "graphql": "^0.10.1",
+    "graphql-server-express": "^0.8.0",
+    "graphql-tools": "^1.0.0",
+    "nodemon": "^1.11.0",
+    "yarn": "^0.24.5"
+  },
+  "main": "index.js"
+}
